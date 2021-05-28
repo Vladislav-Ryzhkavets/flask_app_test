@@ -1,7 +1,10 @@
 from app import app
 from app import db
-import view
+
 from posts.blueprint import posts
+
+import view
+
 
 app.register_blueprint(posts, url_prefix='/blog')
 
