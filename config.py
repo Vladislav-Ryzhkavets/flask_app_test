@@ -3,3 +3,5 @@ class Configuration(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://sammy:6660sS!x@localhost/flask_app_test'
     SECRET_KEY = 'something very secret'
+    SECURITY_PASSWORD_SALT = 'salt'
+    SECURITY_PASSWORD_HASH = 'bcrypt'
