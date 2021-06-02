@@ -9,17 +9,17 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-md-6">
-    <form action="{{ url_for('posts.edit_post', slug=post.slug) }}" method="POST">
-        {% for field in form %}
-        <div class="form-gpoup">
-            {{ field.label(class='control-label') }}
-            {{ field(class='form-control') }}
-        </div>
-        {% endfor %}
+    <div class="col-md-6">
+        <form action="{{ url_for('posts.edit_post', slug=post.slug) }}" method="POST">
+            {% for field in form %}
+            <div class="form-gpoup">
+                {{ field.label(class='control-label') }}
+                {{ field(class='form-control') }}
+            </div>
+            {% endfor %}
 
-        <button type="submit" class="btn btn-success">Edit</button>
+            <button type="submit" class="btn btn-success">Edit</button>
 
-    </form>
-</div>
+        </form>
+    </div>
 {% endblock %}

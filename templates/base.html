@@ -7,10 +7,8 @@
           crossorigin="anonymous">
     <meta charset="'UTF-8">
     <title>
-
         {% block title %}
         {% endblock %} | Flask app
-
     </title>
 </head>
 <body>
@@ -32,12 +30,9 @@
                        href="{{ url_for('posts.index') }}">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="{{ url_for('posts.create_post') }}">Create</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1"
-                       aria-disabled="true">Disabled</a>
+                    {% if current_user.has_role('admin') %}
+                        <a class="nav-link active" href="/admin">Admin</a>
+                    {% endif %}
                 </li>
             </ul>
             <form class="d-flex" method="GET">
@@ -53,6 +48,8 @@
 
 <div class="container">
     <div class="row">
+        <p></p>
+        <p></p>
         <h1>
             {% block content_title %}
             {% endblock %}
